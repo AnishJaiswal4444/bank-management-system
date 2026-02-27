@@ -1,15 +1,15 @@
 package com.detagenix.bank_management_system.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
+
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "current_accounts")
 @Data
+@SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,13 +21,14 @@ public class CurrentAccount extends Account {
     @Column(length = 20)
     private String gstNumber;
 
-    @Column(nullable = false)
-    private Double overdraftIntRate;
+    @Column(nullable = false, precision = 5, scale = 2)
+    private BigDecimal overdraftInterestRate;
 
     @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal monthlyServiceFee;
 
     @Column(nullable = false)
+    @Builder.Default
     private Boolean overdraftUsed = false;
 
     @Column(nullable = false)

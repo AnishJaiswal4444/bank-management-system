@@ -1,10 +1,9 @@
 package com.detagenix.bank_management_system.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -12,17 +11,18 @@ import java.time.LocalDate;
 @Table(name = "savings_accounts")
 @Data
 @EqualsAndHashCode(callSuper = true)
+@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
 public class SavingsAccount extends Account {
 
-    @Column(nullable = false)
-    private Double interestRate;
+    @Column(nullable = false, precision = 4, scale = 2)
+    private BigDecimal interestRate;
 
-    @Column(nullable = false, precision = 15, scale = 2)
+    @Column(nullable = false, precision = 19, scale = 2)
     private BigDecimal withdrawalLimit;
 
-    @Column(nullable = false, precision = 15, scale = 2)
+    @Column(nullable = false, precision = 19, scale = 2)
     private BigDecimal dailyTxnLimit;
 
     @Column(nullable = false)

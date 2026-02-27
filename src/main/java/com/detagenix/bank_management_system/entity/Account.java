@@ -1,16 +1,20 @@
 package com.detagenix.bank_management_system.entity;
 
 import com.detagenix.bank_management_system.enums.AccountStatus;
+import com.detagenix.bank_management_system.enums.AccountType;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
+
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "accounts")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@SuperBuilder
+@EqualsAndHashCode(callSuper = true)
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Account extends BaseEntity {
 
@@ -18,7 +22,7 @@ public class Account extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long accountId;
 
-    @Column(unique = true, nullable = false, length = 20)
+    @Column(unique = true, nullable = false, length = 20, updatable = false)
     private String accountNumber;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -29,24 +33,23 @@ public class Account extends BaseEntity {
     @JoinColumn(name = "user_id", nullable = false)
     private UserEntity user;
 
-    @Column(nullable = false, precision = 15, scale = 2)
+    @Column(nullable = false, precision = 19, scale = 2)
+    @Builder.Default
     private BigDecimal accountBalance = BigDecimal.ZERO;
 
-    @Column(nullable = false, precision = 15, scale = 2)
+    @Column(nullable = false, precision = 19, scale = 2)
     private BigDecimal minimumRequiredBalance;
 
-    @Column(nullable = false)
-    private Boolean isActive = true;
+//    @Column(nullable = false)
+//    @Builder.Default
+//    private Boolean isActive = true;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 50)
-    private AccountStatus accountStatus;
+    @Builder.Default
+    private AccountStatus accountStatus =  AccountStatus.ACTIVE;
 
-    @Column(nullable = false)
-    private LocalDateTime createdAt;
-
-//    @PrePersist : already created
-    protected void onCreateAccount() {
-        this.createdAt = LocalDateTime.now();
-    }
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 20)
+    private AccountType accountType;
 }

@@ -131,6 +131,27 @@ public class Constants {
     public static final String SUCCESS_BRANCHES_FOUND = "Branches found";
     public static final String ERROR_BRANCH_NOT_FOUND = "Branch not found";
 
+    // Account Messages
+    public static final String MSG_ACCOUNT_TYPE_REQUIRED = "Account type is required";
+    public static final String MSG_BRANCH_ID_REQUIRED = "Branch ID is required";
+    public static final String MSG_INITIAL_DEPOSIT_REQUIRED = "Initial deposit is required";
+    public static final String MSG_INVALID_AMOUNT = "Invalid amount";
+    public static final String ERROR_INVALID_ACCOUNT_TYPE = "Invalid account type";
+    public static final String ERROR_KYC_NOT_VERIFIED = "User KYC is not verified";
+    public static final String ERROR_MINIMUM_BALANCE = "Initial deposit is below minimum required balance";
+    public static final String MSG_INTEREST_RATE_REQUIRED = "Interest rate is required";
+    public static final String MSG_INVALID_INTEREST_RATE = "Invalid interest rate";
+    public static final String MSG_WITHDRAWAL_LIMIT_REQUIRED = "Withdrawal limit is required";
+    public static final String MSG_DAILY_TXN_LIMIT_REQUIRED = "Daily transaction limit is required";
+    public static final String MSG_MAX_WITHDRAWALS_REQUIRED = "Max withdrawals is required";
+    public static final String MSG_INVALID_MAX_WITHDRAWALS = "Max withdrawals must be at least 1";
+    public static final String MSG_OVERDRAFT_LIMIT_REQUIRED = "Overdraft limit is required";
+    public static final String MSG_OVERDRAFT_INTEREST_REQUIRED = "Overdraft interest rate is required";
+    public static final String MSG_MONTHLY_FEE_REQUIRED = "Monthly service fee is required";
+    public static final String MSG_FREE_TRANS_LIMIT_REQUIRED = "Free transaction limit is required";
+    public static final String MSG_INVALID_FREE_TRANS_LIMIT = "Free transaction limit cannot be negative";
+    public static final String MSG_INVALID_GST = "Invalid GST number";
+
     // Private constructor to prevent instantiation
     private Constants() {
         throw new UnsupportedOperationException("This is a utility class and cannot be instantiated");
