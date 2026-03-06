@@ -75,14 +75,16 @@ Authorization: Bearer <JWT_TOKEN>
 
 ```json
 {
-  "accountType": "SAVINGS",
-  "userId": 1,
-  "branchId": 2,
-  "initialDeposit": 5000.00,
-  "interestRate": 4.50,
-  "withdrawalLimit": 25000.00,
-  "dailyTxnLimit": 50000.00,
-  "maxWithdrawals": 5
+    "accountType": "SAVINGS",
+    "userId": 1,
+    "branchId": 2,
+    "initialDeposit": 5000.00,
+    "savingDetails": {
+        "interestRate": 4.50,
+        "withdrawalLimit": 25000.00,
+        "dailyTxnLimit": 50000.00,
+        "maxWithdrawals": 5
+    }
 }
 ```
 
@@ -93,12 +95,14 @@ Authorization: Bearer <JWT_TOKEN>
   "accountType": "CURRENT",
   "userId": 1,
   "branchId": 2,
-  "initialDeposit": 25000.00,
-  "overdraftLimit": 100000.00,
-  "overdraftInterestRate": 12.50,
-  "monthlyServiceFee": 500.00,
-  "freeTransLimit": 10,
-  "gstNumber": "27ABCDE1234F1Z5"
+  "initialDeposit": 10000,
+  "currentDetails": {
+    "overdraftLimit": 50000,
+    "overdraftInterestRate": 8.5,
+    "monthlyServiceFee": 500,
+    "freeTransLimit": 10,
+    "gstNumber": "GST1234567"
+  }
 }
 ```
 
