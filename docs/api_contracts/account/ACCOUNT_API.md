@@ -160,7 +160,7 @@ Authorization: Bearer <JWT_TOKEN>
     },
     "timestamp": "2026-03-06T22:58:57"
 }
-
+```
 ---
 
 # 2️⃣ Get Account By Account Number
