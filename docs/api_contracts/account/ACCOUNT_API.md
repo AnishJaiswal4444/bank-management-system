@@ -139,27 +139,27 @@ Authorization: Bearer <JWT_TOKEN>
 
 ```json
 {
-  "success": true,
-  "message": "Account created successfully",
-  "data": {
-    "accountId": 12,
-    "accountNumber": "ACC000012",
-    "accountType": "CURRENT",
-    "accountBalance": 10000,
-    "minimumRequiredBalance": 1000,
-    "accountStatus": "ACTIVE",
-
-    "overdraftLimit": 50000,
-    "overdraftInterestRate": 8.5,
-    "monthlyServiceFee": 500,
-    "freeTransLimit": 10,
-    "gstNumber": "GST1234567",
-
-    "createdAt": "2026-03-06T20:15:00"
-  },
-  "timestamp": "2026-03-06T20:15:00"
+    "success": true,
+    "message": "Account created successfully",
+    "data": {
+        "accountId": 22,
+        "accountNumber": "ACC000006",
+        "accountType": "CURRENT",
+        "accountBalance": 10000,
+        "minimumRequiredBalance": 1000,
+        "accountStatus": "ACTIVE",
+        "currentDetails": {
+            "overdraftLimit": 50000,
+            "overdraftInterestRate": 8.5,
+            "overdraftUsed": 0,
+            "monthlyServiceFee": 500,
+            "freeTransLimit": 10,
+            "gstNumber": "GST1234567"
+        },
+        "createdAt": "2026-03-06T22:58:57"
+    },
+    "timestamp": "2026-03-06T22:58:57"
 }
-```
 
 ---
 
