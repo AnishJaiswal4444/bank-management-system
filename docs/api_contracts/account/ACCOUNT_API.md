@@ -118,18 +118,20 @@ Authorization: Bearer <JWT_TOKEN>
   "message": "Account created successfully",
   "data": {
     "accountId": 101,
-    "accountNumber": "BR002000123",
+    "accountNumber": "ACC000101",
     "accountType": "SAVINGS",
     "accountBalance": 5000.00,
     "minimumRequiredBalance": 1000.00,
     "accountStatus": "ACTIVE",
-    "interestRate": 4.50,
-    "withdrawalLimit": 25000.00,
-    "dailyTxnLimit": 50000.00,
-    "maxWithdrawals": 5,
-    "createdAt": "2026-02-27T10:15:30"
+    "savingDetails": {
+      "interestRate": 4.50,
+      "withdrawalLimit": 25000.00,
+      "dailyTxnLimit": 50000.00,
+      "maxWithdrawals": 5
+    },
+    "createdAt": "2026-03-06T20:30:00"
   },
-  "timestamp": "2026-02-27T10:15:30"
+  "timestamp": "2026-03-06T20:30:00"
 }
 ```
 
@@ -140,20 +142,22 @@ Authorization: Bearer <JWT_TOKEN>
   "success": true,
   "message": "Account created successfully",
   "data": {
-    "accountId": 102,
-    "accountNumber": "BR002000124",
+    "accountId": 12,
+    "accountNumber": "ACC000012",
     "accountType": "CURRENT",
-    "accountBalance": 25000.00,
-    "minimumRequiredBalance": 5000.00,
+    "accountBalance": 10000,
+    "minimumRequiredBalance": 1000,
     "accountStatus": "ACTIVE",
-    "overdraftLimit": 100000.00,
-    "overdraftInterestRate": 12.50,
-    "monthlyServiceFee": 500.00,
+
+    "overdraftLimit": 50000,
+    "overdraftInterestRate": 8.5,
+    "monthlyServiceFee": 500,
     "freeTransLimit": 10,
-    "gstNumber": "27ABCDE1234F1Z5",
-    "createdAt": "2026-02-27T11:00:00"
+    "gstNumber": "GST1234567",
+
+    "createdAt": "2026-03-06T20:15:00"
   },
-  "timestamp": "2026-02-27T11:00:00"
+  "timestamp": "2026-03-06T20:15:00"
 }
 ```
 
